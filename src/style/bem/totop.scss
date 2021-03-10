@@ -1,0 +1,62 @@
+@import "../variables.scss";
+
+.totop {
+  position: fixed;
+  bottom: 10px;
+  opacity: 0;
+  right: -$size-totop;
+  transition: opacity 0.3s ease-in, right 0.3s ease-in;
+  z-index: 10;
+  width: $size-totop;
+  height: $size-totop;
+  border-radius: $size-totop;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $color-accent;
+  text-decoration: none;
+  background-color: #FFF;
+
+  &__arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.28 * $size-totop;
+    border-top-width: 0;
+    border-color: transparent transparent $color-accent transparent;
+  }
+
+  &__text {
+    margin-top: 2px;
+    font-size: 0.6 * $font-size-base;
+  }
+
+  &_visible {
+    opacity: 1;
+    right: 10px;
+  }
+
+  &_shadow {
+    box-shadow: 0 0 20px transparentize($color-accent, 0.5);
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px transparentize($color-accent, 0.5);
+    background-color: lighten($color-accent, 15%);
+    color: #FFF;
+
+    .totop__arrow {
+      border-color: transparent transparent #FFF transparent;
+    }
+  }
+
+  &:active {
+    background-color: lighten($color-accent, 7%);
+    color: #FFF;
+
+    .totop__arrow {
+      border-color: transparent transparent #FFF transparent;
+    }
+  }
+}

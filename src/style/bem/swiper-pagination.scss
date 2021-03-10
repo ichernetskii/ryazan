@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.swiper-pagination_accent {
+  .swiper-pagination-bullet {
+    background: $color-accent !important;
+    opacity: 0.35 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $color-accent !important;
+    opacity: 1 !important;
+  }
+}
+
+.swiper-button-prev_accent {
+  color: $color-accent;
+}
+
+.swiper-button-next_accent {
+  color: $color-accent;
+}

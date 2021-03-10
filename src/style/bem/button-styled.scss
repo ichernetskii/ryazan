@@ -1,0 +1,50 @@
+@import "../variables.scss";
+
+.button-styled {
+  position: relative;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-weight: $font-weight-bold;
+  padding: 25px 80px;
+  margin: 30px 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background: $color-accent;
+  background: linear-gradient(to top, $color-accent, lighten($color-accent, 10%));
+  box-shadow: 0 2px darken($color-accent, 10%);
+
+  &::before, &::after {
+    content: "";
+    display: inline-block;
+    height: 45px;
+    background-image: url("../img/bem/button-styled/button-styled-bg.png");
+    width: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    left: auto;
+    right: 8px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &:hover {
+    background: #FECB48;
+    background: linear-gradient(to top, #FECB48, #FFD362);
+  }
+
+  &:active {
+    background: #FDBC18;
+    box-shadow: none;
+  }
+}

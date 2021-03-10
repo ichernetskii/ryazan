@@ -1,0 +1,40 @@
+@import "../variables.scss";
+
+.button-link {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  padding: 0 5px;
+  z-index: 0;
+
+  &__content {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 24px;
+      height: 50%;
+      bottom: 0;
+      left: 0;
+      background-color: $color-accent;
+      z-index: -1;
+      transition: width 0.1s ease-in;
+    }
+  }
+
+  &_accent {
+    background-color: $color-accent;
+
+    .button-link__content::before {
+      background-color: #FFF;
+    }
+  }
+
+  &:hover {
+    .button-link__content::before {
+      width: 100%;
+    }
+  }
+}
